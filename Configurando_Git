@@ -1,0 +1,48 @@
+CONFIGURANDO O GIT PARA CONEXÃO DIRETA COM A MÁQUINA
+________________________________________________________________________________________________________________
+
+CONFIGURANDO NOME E EMAIL NO GIT
+
+$ git config --global user.name "AlanAlves"
+$ git config --global user.email "alancristofer.s@gmail.com"
+
+CRIANDO A CHAVE SSH PARA COMUNICAÇÃO ENTRE A MÁQUINA E O GIT
+
+* Validando se pasta ja esta Criada no PC
+
+$ cd ~/.ssh // O COMANDO cd PERMITE QUE POSSAMOS ENTRAR EM UMA DETERMINADA PASTA NO PC
+bash: cd: /c/Users/Alan Alves/.ssh: No such file or directory  // SIGNIFICA QUE A PASTA NÃO EXISTE
+
+CRIANDO A CHAVE SSH
+
+$ ssh-keygen -o -t rsa -C "alancristofer.s@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Alan Alves/.ssh/id_rsa):
+Created directory '/c/Users/Alan Alves/.ssh'.
+Enter passphrase for "/c/Users/Alan Alves/.ssh/id_rsa" (empty for no passphrase): // PODEMOS COLOCAR UMA SENHA PARA ACESSAR OU NÃO
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Alan Alves/.ssh/id_rsa
+Your public key has been saved in /c/Users/Alan Alves/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:XXX
+The key's randomart image is:XXX
+
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa XXX  // BASTA COPIAR ESSA CHAVE E ADICIONAR NO SETTINGS NO GITHUB PARA ESTABELECER A CONEXÃO
+
+ENTRANDO NA PASTA QUE IREMOS CRIAR PARA O REPOSITÓRIO
+
+$ cd C:/Users/GITHUB/GitHub-Repositorio
+
+INICIANDO O REPOSITÓRIO
+
+$ git init
+Initialized empty Git repository in C:/Users/GITHUB/GitHub-Repositorio/.git/
+
+CONECTANDO O REPOSITÓRIO DO GIT
+
+$ git remote add origin git@github.com:AlanCSAlves/GitLearn.git
+
+$ git remote -v // ESTE COMANDO PERMITE VERIFICAR SE ESTA TUDO OK
+origin  git@github.com:AlanCSAlves/GitLearn.git (fetch)
+origin  git@github.com:AlanCSAlves/GitLearn.git (push)
