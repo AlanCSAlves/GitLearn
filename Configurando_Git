@@ -1,0 +1,261 @@
+Configurando o Git para comunição  direto da Maquina!
+________________________________________________________________________________________________________________
+
+Configurando nome e e-mail no Git
+
+$ git config --global user.name "AlanAlves"
+$ git config --global user.email "alancristofer.s@gmail.com"
+
+Criando a chave SSH para comunicação entre a Máquina e o Git
+
+* Validando se pasta ja esta Criada no PC
+
+
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 ~
+$ ssh-keygen -o -t rsa -C "alancristofer.s@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Alan Alves/.ssh/id_rsa):
+Created directory '/c/Users/Alan Alves/.ssh'.
+Enter passphrase for "/c/Users/Alan Alves/.ssh/id_rsa" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Alan Alves/.ssh/id_rsa
+Your public key has been saved in /c/Users/Alan Alves/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:mGmUOgNYRqu/fELzI4w5/x5fh1NOAS5LbDWohATgheQ alancristofer.s@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|==*o   .+        |
+|o=o....+ o       |
+|.Eo. .B . .      |
+| . ..= *   .     |
+|.   + * S o      |
+| .o  +   =       |
+| =.o.   + o      |
+|+.+.+o . o       |
+| o+*o..          |
++----[SHA256]-----+
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 ~
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC59o888CNqSjPxnLMCL98nX5u5ZKnSoijob8kyp7fNzfFipZcVEWlDR6LbCdI22iSs2prTmAXp7fkQcBuz8mwtAmgTvzRIaS+DKgyVDM3Ypnp6UC/Zyl3C9+8myapyY0CP9/BTkgMR61U/1Qo71WCTBWQ4f0D63M0+U3XNN1+3f8eLLRtultQDu/4gw54q7nb2ur2yELavPCGPs+WH2t6/k8PORufxFZBrJ7e39o84BlmJgbpyA3vrTMr2WGus8og8fJlSMnpstwLCf7f2F9wo5IOeHox0il3+PADTVsjxsDxgH6HDP2DpLWVXqItychy4sHXY/XHwQz9Nypyxd+O+9+2R2IlfRAeNKAoGVYQxznePRGAXHcjNVuHHgTp9gVumkwVHrNcbjYWMapCAfJOT7X28gS36IGbIuVgfGhMttJQxcGL8RdkcOBuFwjAi6jTt/PUnNdGMVI2rETsYHfNQnS2UE+jfdW9o++UKB+pIjHgHrm7EHSRNj9jFpq+66Z0= alancristofer.s@gmail.com
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 ~
+$ ^C
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 ~
+$ cd C:/Users/Alan Alves/Documents/Meus Arquivos/DNC/DEX - CIENCIA DE DADOS DNC - FORMATO LEGACY/01 - CONTEÚDO/SLOT[5]/GITHUB/GitHub-Repositorio
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 ~
+$ cd C:/
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c
+$ cd Users/Alan Alves/Documents/Meus Arquivos/DNC/DEX - CIENCIA DE DADOS DNC - FORMATO LEGACY/01 - CONTEÚDO/S
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c
+$ cd Users/Alan Alves/Documents/Meus Arquivos/
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c
+$ cd Users/Alan Alves
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c
+$ cd Users
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users
+$ cd Alan Alves
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users
+$ cd Alan-Alves
+bash: cd: Alan-Alves: No such file or directory
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users
+$ cd Alan Alves
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users
+$ cd Users/Alan Alves/Documents/Meus Arquivos/
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users
+$ cd C:/Users/Alan Alves/Desktop
+bash: cd: too many arguments
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users
+$ cd GITHUB
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB
+$ cd GitHub-Repositorio
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio
+$ git init
+Initialized empty Git repository in C:/Users/GITHUB/GitHub-Repositorio/.git/
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (master)
+$ git remote add origin git@github.com:AlanCSAlves//GitHub.git
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (master)
+$ git remote -v
+origin  git@github.com:AlanCSAlves//GitHub.git (fetch)
+origin  git@github.com:AlanCSAlves//GitHub.git (push)
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (master)
+$ echo "# GitHub" >> README.md
+git init
+git add README.md
+git commit -m "Aprendizado/Revisão Geral de Git"
+git branch -M main
+git remote add origin https://github.com/AlanCSAlves/GitHub.git
+git push -u origin main
+Reinitialized existing Git repository in C:/Users/GITHUB/GitHub-Repositorio/.git/
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) de58392] Aprendizado/Revisão Geral de Git
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+error: remote origin already exists.
+The authenticity of host 'github.com (20.201.28.151)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+fatal: remote error:
+ AlanCSAlves//GitHub is not a valid repository name
+Visit https://support.github.com/ for help
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote -v
+origin  git@github.com:AlanCSAlves//GitHub.git (fetch)
+origin  git@github.com:AlanCSAlves//GitHub.git (push)
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/AlanCSAlves/GitHub.git
+git push -u origin main
+Reinitialized existing Git repository in C:/Users/GITHUB/GitHub-Repositorio/.git/
+On branch main
+nothing to commit, working tree clean
+error: remote origin already exists.
+fatal: remote error:
+ AlanCSAlves//GitHub is not a valid repository name
+Visit https://support.github.com/ for help
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git init
+Reinitialized existing Git repository in C:/Users/GITHUB/GitHub-Repositorio/.git/
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin https://github.com/AlanCSAlves/GitHub.git
+error: remote origin already exists.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote -V
+error: unknown switch `V'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --[no-]verbose    be verbose; must be placed before a subcommand
+
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote -v
+origin  git@github.com:AlanCSAlves//GitHub.git (fetch)
+origin  git@github.com:AlanCSAlves//GitHub.git (push)
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git branch -M main
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git push -u origin main
+fatal: remote error:
+ AlanCSAlves//GitHub is not a valid repository name
+Visit https://support.github.com/ for help
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin https://github.com/AlanCSAlves/GitHub.git
+error: remote origin already exists.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remove
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git config --global user.email "alancristofer.s@gmail.com"
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin https://github.com/AlanCSAlves/GitHub.git
+git branch -M main
+git push -u origin main
+error: remote origin already exists.
+fatal: remote error:
+ AlanCSAlves//GitHub is not a valid repository name
+Visit https://support.github.com/ for help
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin https://github.com/AlanCSAlves/GitHub.git
+error: remote origin already exists.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin https://github.com/AlanCSAlves/GitHub.git
+error: remote origin already exists.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin https://github.com/AlanCSAlves/GitLearn.git
+error: remote origin already exists.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin git@github.com:AlanCSAlves//GitLearn.git
+error: remote origin already exists.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote remove origin
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote add origin git@github.com:AlanCSAlves/GitLearn.git
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git remote -v
+origin  git@github.com:AlanCSAlves/GitLearn.git (fetch)
+origin  git@github.com:AlanCSAlves/GitLearn.git (push)
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git branch -M main
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$ git push -u origin main
+To github.com:AlanCSAlves/GitLearn.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:AlanCSAlves/GitLearn.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Alan Alves@DESKTOP-IEAUR8N MINGW64 /c/Users/GITHUB/GitHub-Repositorio (main)
+$
