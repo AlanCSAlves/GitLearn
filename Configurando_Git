@@ -183,7 +183,7 @@ Your branch is ahead of 'origin/master' by 1 commit.
 
 nothing to commit, working tree clean
 
-$ git push // ENVIANDO AS INFORMAÇÕES PARA O REPOSITÓRIO ONLINE
+$ git push --set-upstream origin master// ENVIANDO AS INFORMAÇÕES PARA A BRANCH MASTER
 Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To github.com:AlanCSAlves/GitLearn.git
    02a78d2..0f9a666  master -> master
