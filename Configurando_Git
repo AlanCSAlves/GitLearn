@@ -1,5 +1,4 @@
 CONFIGURANDO O GIT PARA CONEXÃO DIRETA COM A MÁQUINA
-________________________________________________________________________________________________________________
 
 CONFIGURANDO NOME E EMAIL NO GIT
 
@@ -47,4 +46,145 @@ $ git remote -v // ESTE COMANDO PERMITE VERIFICAR SE ESTA TUDO OK
 origin  git@github.com:AlanCSAlves/GitLearn.git (fetch)
 origin  git@github.com:AlanCSAlves/GitLearn.git (push)
 
-Criando uma variação para representação de versionamento do código
+_______________________________________________________________________________________________________________
+
+RESUMO SIMPLES DOS COMANDOS MAIS UTILIZADOS NO GIT (PÓS CONFIGURAÇÃO)
+
+$ git add . // ESTE COMANDO PERMITE ADICIONAR TODOS OS ARQUIVOS DA PASTA O REPOSITÓRIO
+
+$ git add GitHub.ipynb // ESTE COMANDO PERMITE ADICIONAR UM ARQUIVO ESPECÍFICO DA PASTA O REPOSITÓRIO
+
+$ git status // ESTE COMANDO TRAZ O STATUS ATUAL DAS MUDANÇAS QUE ESTÃO SENDO REALIZADAS
+On branch master  // DIZ A BRANCH QUE VOCÊ ESTÁ E AS MUDANÇAS FEITAS
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   GitHub.ipynb
+        deleted:    README.md
+
+$ git commit -m "Arquivo com Informações Importantes" // UM COMMIT É UM COMENTÁRIO CITANDO AS ALTERAÇÕES REALIZADAS
+[master c119c40] Arquivo com Informações Importantes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 GitHub.ipynb
+ delete mode 100644 README.md
+
+
+$ git pull // ESTE COMANDO PERMITE TRAZER AS INFORMAÇÕES QUE ESTÃO PRESENTES NO REPOSITÓRIO PARA O LOCAL (PC)
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 13 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (13/13), 7.87 KiB | 19.00 KiB/s, done.
+From github.com:AlanCSAlves/GitLearn
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+$ git pull origin master // // ESTE COMANDO TRAZ AS INFORMAÇÕES DA BRANCH MASTER E SINCRONIZA COM A MAQUINA
+From github.com:AlanCSAlves/GitLearn
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories // PODE HAVER EM RELAÇÃO AO HISTÓRICO DE ALTERAÇÕES
+
+
+$ git pull origin master --allow-unrelated-histories // ESTE COMANDO CORRIGE O ERRO ACIMA E SINCRONIZA MELHOR
+From github.com:AlanCSAlves/GitLearn
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+$ git push --set-upstream origin master // ESTE COMANDO ENVIA AS INFORMAÇÕES DO PC PARA O REPOSITÓRIO ONLINE
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 2.15 MiB | 94.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:AlanCSAlves/GitLearn.git
+   d489062..02a78d2  master -> master
+branch 'master' set up to track 'origin/master'.
+
+______________________________________________________________________________________________________________
+
+NAVEGANDO ENTRE BRANCHS
+
+BRANCHS SÃO OS VERSIONAMENTOS DO CÓDIGO PRINCIPAL
+
+PODEMOS CRIAR UMA NOVA BRANCH, REALIZAR AS ALTERAÇÕES NECESSÁRIAS E DEPOIS MESCLAR COM A PRINCIPAL
+
+$ git branch // ESTE COMANDO DEMONSTRA A SUA BRANCH ATUAL
+* master
+
+$ git branch branch_1 // ESTE COMANDO CRIA UMA BRANCH
+
+$ git branch
+  branch_1
+* master
+
+$ git checkout branch_1 // ESTE COMANDO PERMITE NAVEGAR ENTRE AS BRANCHS
+Switched to branch 'branch_1'
+
+$ git branch
+* branch_1
+  master
+
+$ git status // DEMONSTRAÇÃO DAS ALTERAÇÕES FEITAS EM UM ARQUIVO ESPECÍFICO
+On branch branch_1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Configurando_Git
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add . // ADICIONANDO OS ARQUIVOS ALTERADOS NA BRANCH_1
+
+$ git commit -m "Adicionando uma Nova Versão para um Teste Branch" // COMMIT DA ATUALIZAÇÃO FEITA
+[branch_1 0f9a666] Adicionando uma Nova Versão para um Teste Branch
+ 1 file changed, 2 insertions(+)
+
+$ git push --set-upstream origin branch_1 // ENVIANDO AS ALTERAÇÕES PARA O REPOSITÓRIO ONLINE
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 447 bytes | 447.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch_1' on GitHub by visiting:
+remote:      https://github.com/AlanCSAlves/GitLearn/pull/new/branch_1
+remote:
+To github.com:AlanCSAlves/GitLearn.git
+ * [new branch]      branch_1 -> branch_1
+branch 'branch_1' set up to track 'origin/branch_1'.
+
+APLICANDO O MERGE NOS CÓDIGOS FEITOS
+
+$ git checkout master // PRIMEIRO VAMOS ATÉ A BRANCH QUE QUEREMOS MESCLAR
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+$ git merge branch_1 // APLICAMOS O COMANDO MERGE PARA MESCLAR
+Updating 02a78d2..0f9a666
+Fast-forward
+ Configurando_Git | 2 ++
+ 1 file changed, 2 insertions(+)
+
+$ git commit -m "Aplicado o comando Merge" // COMMIT DA ALTERAÇÃO FEITA (O MERGE NESTE CASO)
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+$ git push // ENVIANDO AS INFORMAÇÕES PARA O REPOSITÓRIO ONLINE
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:AlanCSAlves/GitLearn.git
+   02a78d2..0f9a666  master -> master
+
