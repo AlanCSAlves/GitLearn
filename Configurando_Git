@@ -204,7 +204,7 @@ ________________________________________________________________________________
 
 APLICANDO O GIT LOG / GIT REVERT
 
-$ git log // ESTE COMANDO DEMONSTRA TODOS OS COMMITS JA FEITOS NO REPOSITÓRIO
+$ git log // ESTE COMANDO DEMONSTRA TODOS OS COMMITS JA FEITOS NO REPOSITÓRIO (USAMOS O "Q" PRA SAIR DO MODO LOG)
 commit 96e33689ccdf3231e8b13ebded0bc5415625359c (HEAD -> master, origin/master)
 Author: AlanAlves <alancristofer.s@gmail.com>
 Date:   Sun Feb 2 22:28:06 2025 -0300
