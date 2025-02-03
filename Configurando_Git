@@ -188,3 +188,14 @@ Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To github.com:AlanCSAlves/GitLearn.git
    02a78d2..0f9a666  master -> master
 
+_______________________________________________________________________________________________________________________________
+
+TAMBÉM PODEMOS PEGAR AS INFORMAÇÕES DE UMA BRANCH, PODEMOS APLICAR O COMANDO REBASE:
+
+$ git checkout master // PRIMEIRO VAMOS ATÉ A BRANCH QUE QUEREMOS REBASEAR
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+$ git rebase branch_1 // ESSE COMANDO REBASEIA TODA A CADEIA DE COMMITS E MESCLA AS INFORMAÇÕES SIMILARES
+
+EU REBASEEI A BRANCH MASTER COM TODAS AS INFORMAÇÕES DA BRANCH_1
