@@ -188,7 +188,7 @@ Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To github.com:AlanCSAlves/GitLearn.git
    02a78d2..0f9a666  master -> master
 
-_______________________________________________________________________________________________________________________________
+______________________________________________________________________________________________________________
 
 TAMBÉM PODEMOS PEGAR AS INFORMAÇÕES DE UMA BRANCH, PODEMOS APLICAR O COMANDO REBASE:
 
