@@ -46,3 +46,5 @@ $ git remote add origin git@github.com:AlanCSAlves/GitLearn.git
 $ git remote -v // ESTE COMANDO PERMITE VERIFICAR SE ESTA TUDO OK
 origin  git@github.com:AlanCSAlves/GitLearn.git (fetch)
 origin  git@github.com:AlanCSAlves/GitLearn.git (push)
+
+Criando uma variação para representação de versionamento do código
