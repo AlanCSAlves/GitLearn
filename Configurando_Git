@@ -46,6 +46,10 @@ $ git remote -v // ESTE COMANDO PERMITE VERIFICAR SE ESTA TUDO OK
 origin  git@github.com:AlanCSAlves/GitLearn.git (fetch)
 origin  git@github.com:AlanCSAlves/GitLearn.git (push)
 
+//SUBIU O REPOSITÓRIO ERRADO?
+
+$ git remote remove origin //REMOVE O REPOSITÓRIO
+
 _______________________________________________________________________________________________________________
 
 RESUMO SIMPLES DOS COMANDOS MAIS UTILIZADOS NO GIT (PÓS CONFIGURAÇÃO)
